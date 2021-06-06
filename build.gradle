@@ -1,0 +1,26 @@
+plugins {
+    id 'com.commercehub.gradle.plugin.avro' version '0.22.0'
+    // id 'java'
+}
+
+group 'me.pvkc'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+avro {
+    enableDecimalLogicalType = false
+}
+
+dependencies {
+    compile 'org.apache.avro:avro:1.10.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
